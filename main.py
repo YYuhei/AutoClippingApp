@@ -284,21 +284,10 @@ def download_thumbnail(url, dst_path):
       resized.save(dst_path, quality=100)
   except urllib.error.URLError as e:
       print(e)
-  
-def test():
-  for i in range(20):
-    yt = YouTube(urls[i])
-    s = yt.title.encode('utf-8')
-    d = s.decode('utf-8')
-    print(d)
-    # # サムネイル画像を取得
-    # url='https://img.youtube.com/vi/'+yt.video_id+'/sddefault.jpg'
-    # png_savePath = './download/'+str(i+1).zfill(2)+'_kirinuki.png'
-    # download_thumbnail(url, png_savePath)
 
 #メイン処理------------------------------------------------
 get_video_info()
 video_download(0, 10, 1)
 video_merge()
 # check_fps()
-# test()
+
